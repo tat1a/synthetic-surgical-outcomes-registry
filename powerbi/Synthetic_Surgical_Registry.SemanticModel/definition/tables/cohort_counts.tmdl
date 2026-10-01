@@ -1,0 +1,58 @@
+table cohort_counts
+	lineageTag: ad067a55-cb75-5a40-8352-2d1e464dab3b
+
+	column cohort
+		dataType: text
+		lineageTag: 9e7e1e6d-9eb2-5c3d-a19d-448f0258dbd3
+		sourceColumn: cohort
+
+	column participant_count
+		dataType: int64
+		lineageTag: f2da50d8-92f4-58f8-9dff-cc21524a57d0
+		sourceColumn: participant_count
+		formatString: #,0
+		summarizeBy: none
+
+	measure 'Participants' = SUM(cohort_counts[participant_count])
+		formatString: #,0
+		lineageTag: c62d75b5-420f-599c-8842-4182c90f7ac5
+
+	measure 'Planned Visits' = SUM(followup_by_cohort[planned])
+		formatString: #,0
+		lineageTag: 853c62a2-2897-515b-83dc-ea667f519c6d
+
+	measure 'Completed Visits' = SUM(followup_by_cohort[completed])
+		formatString: #,0
+		lineageTag: 069d171b-7777-5e16-b0ff-2aea782a7b1d
+
+	measure 'Follow-up Completion' = DIVIDE([Completed Visits], [Planned Visits])
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: d7ac788d-ea70-5c88-b673-253a87334081
+
+	measure 'Challenge Queries' = SUM(challenge_queries_by_rule[query_count])
+		formatString: #,0
+		lineageTag: a6d8907e-f149-5a14-a271-b0b52dc1ed6f
+
+	measure 'Event Records' = SUM(ae_by_cohort[event_count])
+		formatString: #,0
+		lineageTag: 0b32a987-e018-5ecb-b43e-49ef76c1b25c
+
+	measure 'Serious Event Flags' = SUM(ae_by_cohort[serious_count])
+		formatString: #,0
+		lineageTag: fac35b89-05d7-5abf-ac16-3a73f5cdfd67
+
+	measure 'Missing Cells' = SUM(field_completeness[missing])
+		formatString: #,0
+		lineageTag: 127ca802-ec48-5748-ae3e-07a201690ba2
+
+	partition cohort_counts = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(Binary.FromText("Y29ob3J0LHBhcnRpY2lwYW50X2NvdW50CmJyZWFzdCwxMDAKbmVydmUsMTAwCndvdW5kLDEwMAo=", BinaryEncoding.Base64), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers", {{"cohort", type text}, {"participant_count", Int64.Type}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
