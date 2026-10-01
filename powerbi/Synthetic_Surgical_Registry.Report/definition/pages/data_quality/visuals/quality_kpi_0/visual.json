@@ -1,0 +1,59 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "quality_kpi_0",
+  "position": {
+    "x": 40,
+    "y": 138,
+    "z": 10,
+    "height": 112,
+    "width": 280,
+    "tabOrder": 10
+  },
+  "visual": {
+    "visualType": "cardVisual",
+    "query": {
+      "queryState": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "cohort_counts"
+                    }
+                  },
+                  "Property": "Challenge Queries"
+                }
+              },
+              "queryRef": "cohort_counts.Challenge Queries",
+              "nativeQueryRef": "Challenge Queries"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Rule hits'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}
