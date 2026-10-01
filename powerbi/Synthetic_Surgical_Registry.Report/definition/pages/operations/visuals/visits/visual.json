@@ -1,0 +1,77 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "visits",
+  "position": {
+    "x": 645,
+    "y": 286,
+    "z": 21,
+    "height": 330,
+    "width": 590,
+    "tabOrder": 21
+  },
+  "visual": {
+    "visualType": "clusteredColumnChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "followup_by_cohort"
+                    }
+                  },
+                  "Property": "day_target"
+                }
+              },
+              "queryRef": "followup_by_cohort.day_target",
+              "nativeQueryRef": "day_target"
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "cohort_counts"
+                    }
+                  },
+                  "Property": "Follow-up Completion"
+                }
+              },
+              "queryRef": "cohort_counts.Follow-up Completion",
+              "nativeQueryRef": "Follow-up Completion"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Completion by follow-up day'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}
