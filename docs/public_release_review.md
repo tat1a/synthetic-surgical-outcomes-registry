@@ -1,6 +1,6 @@
 # Public portfolio release review — updated 2026-10-02
 
-This review applies to the published repository and the matching local 51-file package. Repository tree hashes were compared with local files before this update. The new workflow change requires a fresh remote CI check after publication; a local pass alone is insufficient evidence of a complete remote release.
+This review applies to the published repository and the matching local 51-file package. The repository tree hashes matched all 51 local files at commit `0a3958f`. The updated workflow passed in run #7; a local pass alone would not establish a complete remote release.
 
 | Review item | Current result | Basis / action |
 | --- | --- | --- |
@@ -11,7 +11,7 @@ This review applies to the published repository and the matching local 51-file p
 | Determinism | Tested at row level | Same seed produces same generated rows in automated test. |
 | Controlled challenge | 18 root errors, all identified | 30 related rule hits include cascading due-date issues. |
 | Query history | Scripted, non-EDC | Fixed timestamp and generated truth source are disclosed. |
-| Tests | Eight pass locally; remote Python 3.10/3.12 passed in run #4 | [Observed run](https://github.com/tat1a/synthetic-surgical-outcomes-registry/actions/runs/36933647259). New text-output reproducibility gate awaits its first remote run. |
+| Tests and reproducibility | Eight pass locally; remote Python 3.10/3.12 and text-output comparison passed in run #7 | [Observed run](https://github.com/tat1a/synthetic-surgical-outcomes-registry/actions/runs/36934612867). Binary SQLite files are checked by logical rows and rules, not byte identity. |
 | Documentation | Present | Protocol, analysis and data-management plans, CRF, field dictionary, rules, validation report, reviewer packet and handoff. |
 | License and repository owner | **Decided** | Owner requested public GitHub under their account with no license file. |
 

@@ -11,7 +11,7 @@ python -m src.build
 python -m unittest discover -s tests -v
 ```
 
-The build generated three SQLite states and aggregate reports; all **8 automated tests passed** locally. Published [GitHub Actions run #4](https://github.com/tat1a/synthetic-surgical-outcomes-registry/actions/runs/36933647259) passed on Python 3.10 and 3.12 after the Node 24 action update. The current workflow pins Ubuntu 24.04 and verifies that text manifests and reports reproduce exactly after rebuilding; that additional CI gate must be checked in the next run. SQLite files are compared at the logical row and validation-rule level, since byte-for-byte equivalence across SQLite versions is not claimed. The default seed is `20261001` and generator version is the repository's committed source. The fixed pseudo-audit timestamp is intentional for reproducibility.
+The build generated three SQLite states and aggregate reports; all **8 automated tests passed** locally. Published [GitHub Actions run #7](https://github.com/tat1a/synthetic-surgical-outcomes-registry/actions/runs/36934612867) passed on Python 3.10 and 3.12. The workflow pins Ubuntu 24.04 and verifies that text manifests and reports reproduce exactly after rebuilding. SQLite files are compared at the logical row and validation-rule level, since byte-for-byte equivalence across SQLite versions is not claimed. The default seed is `20261001` and generator version is the repository's committed source. The fixed pseudo-audit timestamp is intentional for reproducibility.
 
 ## Results and reconciliation
 
