@@ -1,0 +1,59 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "kpi_0",
+  "position": {
+    "x": 40,
+    "y": 130,
+    "z": 10,
+    "height": 120,
+    "width": 280,
+    "tabOrder": 10
+  },
+  "visual": {
+    "visualType": "cardVisual",
+    "query": {
+      "queryState": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "cohort_counts"
+                    }
+                  },
+                  "Property": "Participants"
+                }
+              },
+              "queryRef": "cohort_counts.Participants",
+              "nativeQueryRef": "Participants"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Simulated participants'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}
