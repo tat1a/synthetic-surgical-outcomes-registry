@@ -1,6 +1,6 @@
-# Project state — 2026-10-01
+# Project state — updated 2026-10-02
 
-Status: complete, locally validated **synthetic portfolio demonstration**; not a finished clinical registry or a clinical publication. Before citing a public repository as complete, verify that its source, synthetic examples, reports and CI match this package.
+Status: published **synthetic portfolio demonstration**; not a finished clinical registry or a clinical publication. The public repository contains the full source, synthetic examples, reports and documentation. GitHub Actions rebuilds and tests on Python 3.10 and 3.12; the validation report records the observed run. The current workflow also checks committed text outputs against a fresh rebuild. Binary SQLite files are tested at the row and rule level, not asserted to be byte-identical across SQLite versions.
 
 Completed: scope and charter; simulation protocol, operational analysis and data-management plans; shared CRF and three modules; field-level dictionary; SQLite schema; seeded synthetic generation; challenge errors with answer key; validation and query export; scripted reconciliation and audit log; aggregate operational HTML dashboard and BI-ready CSV tables; SQL metrics; internal methods review, reviewer packet, traceability matrix, eight tests, negative empty-registry gate, and lock-readiness exercise.
 
