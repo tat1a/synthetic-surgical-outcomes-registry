@@ -1,0 +1,59 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "kpi_1",
+  "position": {
+    "x": 345,
+    "y": 130,
+    "z": 11,
+    "height": 120,
+    "width": 280,
+    "tabOrder": 11
+  },
+  "visual": {
+    "visualType": "cardVisual",
+    "query": {
+      "queryState": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "cohort_counts"
+                    }
+                  },
+                  "Property": "Follow-up Completion"
+                }
+              },
+              "queryRef": "cohort_counts.Follow-up Completion",
+              "nativeQueryRef": "Follow-up Completion"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Follow-up completed'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}
