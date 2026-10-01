@@ -1,0 +1,45 @@
+table field_completeness
+	lineageTag: 347e5aeb-249a-5ee0-ac4c-b04ebc11c573
+
+	column table_name
+		dataType: text
+		lineageTag: eded1902-0a8b-521d-a86e-de399b1a6105
+		sourceColumn: table_name
+
+	column field_name
+		dataType: text
+		lineageTag: 89ed55e5-62fa-5e47-b780-f2835613dd3a
+		sourceColumn: field_name
+
+	column nonmissing
+		dataType: int64
+		lineageTag: 91888ab9-962c-596d-b3ca-b66337f6b7ce
+		sourceColumn: nonmissing
+		formatString: #,0
+		summarizeBy: none
+
+	column rows
+		dataType: int64
+		lineageTag: 46f75be3-2cbb-5e2e-b1df-6980db8bb4a6
+		sourceColumn: rows
+		formatString: #,0
+		summarizeBy: none
+
+	column missing
+		dataType: int64
+		lineageTag: b70a9d80-ff5a-5972-8ecc-3c866244652c
+		sourceColumn: missing
+		formatString: #,0
+		summarizeBy: none
+
+	partition field_completeness = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(Binary.FromText("dGFibGVfbmFtZSxmaWVsZF9uYW1lLG5vbm1pc3Npbmcscm93cyxtaXNzaW5nCnBhcnRpY2lwYW50cyxwYXJ0aWNpcGFudF9pZCwzMDAsMzAwLDAKcGFydGljaXBhbnRzLGNvaG9ydCwzMDAsMzAwLDAKcGFydGljaXBhbnRzLGFnZV9iYW5kLDMwMCwzMDAsMApwYXJ0aWNpcGFudHMsZW5yb2xsZWRfb24sMzAwLDMwMCwwCnByb2NlZHVyZXMscHJvY2VkdXJlX2lkLDMwMCwzMDAsMApwcm9jZWR1cmVzLHBhcnRpY2lwYW50X2lkLDMwMCwzMDAsMApwcm9jZWR1cmVzLGNvaG9ydCwzMDAsMzAwLDAKcHJvY2VkdXJlcyxwcm9jZWR1cmVfb24sMzAwLDMwMCwwCnByb2NlZHVyZXMscHJvY2VkdXJlX3R5cGUsMzAwLDMwMCwwCmJyZWFzdF9tb2R1bGUscHJvY2VkdXJlX2lkLDEwMCwxMDAsMApicmVhc3RfbW9kdWxlLGludGVudCwxMDAsMTAwLDAKYnJlYXN0X21vZHVsZSxsYXRlcmFsaXR5LDEwMCwxMDAsMApicmVhc3RfbW9kdWxlLGltcGxhbnRfdXNlZCwxMDAsMTAwLDAKbmVydmVfbW9kdWxlLHByb2NlZHVyZV9pZCwxMDAsMTAwLDAKbmVydmVfbW9kdWxlLGluanVyeV9sZXZlbCwxMDAsMTAwLDAKbmVydmVfbW9kdWxlLHRlY2huaXF1ZSwxMDAsMTAwLDAKbmVydmVfbW9kdWxlLHRhcmdldF9mdW5jdGlvbiwxMDAsMTAwLDAKd291bmRfbW9kdWxlLHByb2NlZHVyZV9pZCwxMDAsMTAwLDAKd291bmRfbW9kdWxlLHJlZ2lvbiwxMDAsMTAwLDAKd291bmRfbW9kdWxlLGNvdmVyYWdlLDEwMCwxMDAsMAp3b3VuZF9tb2R1bGUsZGVmZWN0X3NpemUsMTAwLDEwMCwwCmZvbGxvd3Vwcyxmb2xsb3d1cF9pZCwxMjAwLDEyMDAsMApmb2xsb3d1cHMscGFydGljaXBhbnRfaWQsMTIwMCwxMjAwLDAKZm9sbG93dXBzLGRheV90YXJnZXQsMTIwMCwxMjAwLDAKZm9sbG93dXBzLGR1ZV9vbiwxMjAwLDEyMDAsMApmb2xsb3d1cHMsc3RhdHVzLDEyMDAsMTIwMCwwCmZvbGxvd3Vwcyx2aXNpdF9vbiwxMDEyLDEyMDAsMTg4CmZvbGxvd3VwcyxmdW5jdGlvbl9zY29yZSwxMDEyLDEyMDAsMTg4CmFkdmVyc2VfZXZlbnRzLGV2ZW50X2lkLDUyLDUyLDAKYWR2ZXJzZV9ldmVudHMscHJvY2VkdXJlX2lkLDUyLDUyLDAKYWR2ZXJzZV9ldmVudHMsZXZlbnRfb24sNTIsNTIsMAphZHZlcnNlX2V2ZW50cyx0ZXJtLDUyLDUyLDAKYWR2ZXJzZV9ldmVudHMsc2V2ZXJpdHksNTIsNTIsMAphZHZlcnNlX2V2ZW50cyxzZXJpb3VzLDUyLDUyLDAKYWR2ZXJzZV9ldmVudHMsbm90aWZpZWRfb24sNSw1Miw0Nwo=", BinaryEncoding.Base64), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers", {{"table_name", type text}, {"field_name", type text}, {"nonmissing", Int64.Type}, {"rows", Int64.Type}, {"missing", Int64.Type}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
