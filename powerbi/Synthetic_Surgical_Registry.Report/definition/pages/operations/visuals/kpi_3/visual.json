@@ -1,0 +1,59 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "kpi_3",
+  "position": {
+    "x": 955,
+    "y": 130,
+    "z": 13,
+    "height": 120,
+    "width": 280,
+    "tabOrder": 13
+  },
+  "visual": {
+    "visualType": "cardVisual",
+    "query": {
+      "queryState": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "cohort_counts"
+                    }
+                  },
+                  "Property": "Event Records"
+                }
+              },
+              "queryRef": "cohort_counts.Event Records",
+              "nativeQueryRef": "Event Records"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Event records'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}
