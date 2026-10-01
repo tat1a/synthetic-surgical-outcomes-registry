@@ -1,0 +1,14 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+
+annotation PBI_QueryOrder = ["cohort_counts", "followup_by_cohort", "ae_by_cohort", "challenge_queries_by_rule", "field_completeness"]
+
+ref table cohort_counts
+ref table followup_by_cohort
+ref table ae_by_cohort
+ref table challenge_queries_by_rule
+ref table field_completeness
+
+ref cultureInfo en-US
