@@ -3,6 +3,7 @@
 | Demonstration requirement | Implementation | Evidence |
 | --- | --- | --- |
 | Fictional records with repeatable build | `src/generate.py`, seed manifest | Determinism test; generated `data/` files. |
+| Published text outputs match rebuild | `.github/workflows/ci.yml` | CI checks generated manifest, challenge key, and reports for differences after rebuild. |
 | Cohort-specific capture | `sql/schema.sql`, `docs/CRF_spec.md` | Required module checks; 100 per cohort in summary. |
 | Relational referential integrity | Foreign keys in schema; `PRAGMA foreign_key_check` | Challenge and reconciled tests. |
 | Longitudinal visits | Follow-up table and generator | 1,200 planned rows; milestone export. |

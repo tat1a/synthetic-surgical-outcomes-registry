@@ -9,3 +9,4 @@
 | 2026-10-01 | Use SQL constraints for hard typing and referential integrity; inject errors that pass storage constraints. | Demonstrates edit checks at the application layer while retaining a usable relational schema. |
 | 2026-10-01 | Block technical lock for an empty registry or absent demonstration cohort. | A zero-issue empty database must not pass readiness. |
 | 2026-10-01 | Publish the completed portfolio package publicly without a license file, subject to final QA. | Explicit owner instruction; no real data and no clinical validity claim. |
+| 2026-10-02 | Pin GitHub Actions to Ubuntu 24.04, grant read-only repository contents, and compare generated text outputs with committed examples. | Avoid an unreviewed `ubuntu-latest` migration; detect stale published reports while preserving the logical rather than byte-level SQLite reproducibility claim. |

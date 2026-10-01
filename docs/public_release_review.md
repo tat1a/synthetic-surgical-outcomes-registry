@@ -1,6 +1,6 @@
-# Public portfolio release review
+# Public portfolio release review — updated 2026-10-02
 
-This review applies to the complete local package. Check the remote source, data examples, reports and CI before presenting any public GitHub repository as the finished project. A local pass alone is insufficient evidence of a complete remote release.
+This review applies to the published repository and the matching local 51-file package. Repository tree hashes were compared with local files before this update. The new workflow change requires a fresh remote CI check after publication; a local pass alone is insufficient evidence of a complete remote release.
 
 | Review item | Current result | Basis / action |
 | --- | --- | --- |
@@ -11,8 +11,8 @@ This review applies to the complete local package. Check the remote source, data
 | Determinism | Tested at row level | Same seed produces same generated rows in automated test. |
 | Controlled challenge | 18 root errors, all identified | 30 related rule hits include cascading due-date issues. |
 | Query history | Scripted, non-EDC | Fixed timestamp and generated truth source are disclosed. |
-| Tests | Eight pass locally | Rebuild and test from project root; observe remote CI separately. |
+| Tests | Eight pass locally; remote Python 3.10/3.12 passed in run #4 | [Observed run](https://github.com/tat1a/synthetic-surgical-outcomes-registry/actions/runs/36933647259). New text-output reproducibility gate awaits its first remote run. |
 | Documentation | Present | Protocol, analysis and data-management plans, CRF, field dictionary, rules, validation report, reviewer packet and handoff. |
 | License and repository owner | **Decided** | Owner requested public GitHub under their account with no license file. |
 
-For a public GitHub repository, keep `data/README_SYNTHETIC_ONLY.md` visible and prominently label every analysis output as a simulation. Re-run `python -m src.build` and the test suite immediately before release, then verify the remote repository and CI. A public portfolio release is distinct from clinical or regulatory use.
+Keep `data/README_SYNTHETIC_ONLY.md` visible and prominently label every analysis output as a simulation. Re-run `python -m src.build` and the test suite before publishing a revision, then verify the remote repository and CI. A public portfolio release is distinct from clinical or regulatory use.

@@ -1,4 +1,4 @@
-# Technical validation report — 2026-10-01
+# Technical validation report — updated 2026-10-02
 
 **Scope:** a synthetic registry software demonstration. The report describes executable checks and generated outputs, not clinical validation, research results or regulatory qualification.
 
@@ -11,7 +11,7 @@ python -m src.build
 python -m unittest discover -s tests -v
 ```
 
-The build generated three SQLite states and aggregate reports; all **8 automated tests passed** locally. CI rebuilds and tests on Python 3.10 and 3.12; a remote CI run remains to be observed after publication. The default seed is `20261001` and generator version is the repository's committed source. The fixed pseudo-audit timestamp is intentional for reproducibility.
+The build generated three SQLite states and aggregate reports; all **8 automated tests passed** locally. Published [GitHub Actions run #4](https://github.com/tat1a/synthetic-surgical-outcomes-registry/actions/runs/36933647259) passed on Python 3.10 and 3.12 after the Node 24 action update. The current workflow pins Ubuntu 24.04 and verifies that text manifests and reports reproduce exactly after rebuilding; that additional CI gate must be checked in the next run. SQLite files are compared at the logical row and validation-rule level, since byte-for-byte equivalence across SQLite versions is not claimed. The default seed is `20261001` and generator version is the repository's committed source. The fixed pseudo-audit timestamp is intentional for reproducibility.
 
 ## Results and reconciliation
 
