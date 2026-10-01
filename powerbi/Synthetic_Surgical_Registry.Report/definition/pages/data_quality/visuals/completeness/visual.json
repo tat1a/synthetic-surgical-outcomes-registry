@@ -1,0 +1,130 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "completeness",
+  "position": {
+    "x": 645,
+    "y": 285,
+    "z": 21,
+    "height": 330,
+    "width": 590,
+    "tabOrder": 21
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "field_completeness"
+                    }
+                  },
+                  "Property": "table_name"
+                }
+              },
+              "queryRef": "field_completeness.table_name",
+              "nativeQueryRef": "table_name"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "field_completeness"
+                    }
+                  },
+                  "Property": "field_name"
+                }
+              },
+              "queryRef": "field_completeness.field_name",
+              "nativeQueryRef": "field_name"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "field_completeness"
+                        }
+                      },
+                      "Property": "nonmissing"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(field_completeness.nonmissing)",
+              "nativeQueryRef": "nonmissing"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "field_completeness"
+                        }
+                      },
+                      "Property": "rows"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(field_completeness.rows)",
+              "nativeQueryRef": "rows"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "field_completeness"
+                        }
+                      },
+                      "Property": "missing"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(field_completeness.missing)",
+              "nativeQueryRef": "missing"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Physical NULLs by field'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}
