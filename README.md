@@ -4,7 +4,7 @@
 
 A portfolio demonstration of clinical data management for breast surgery, peripheral nerve reconstruction, and wound reconstruction. **Every record is generated; no real patient data or PHI is used.** Numbers and clinical patterns in this repository are simulation outputs, not medical evidence.
 
-The complete project package covers a simulation design record, analysis specification and data-management plan, CRF specification, relational schema, deterministic generation of 300 fictional participants, independent validation rules, a controlled error challenge, query log, scripted reconciliation with audit entries, a technical lock-readiness report, and an aggregate HTML dashboard. It uses CDASH and SDTM ideas as design references; it is not a CDISC compliant submission or a validated EDC system.
+The complete project package covers a simulation design record, analysis specification and data-management plan, CRF specification, relational schema, deterministic generation of 300 fictional participants, independent validation rules, a controlled error challenge, query log, scripted reconciliation with audit entries, a technical lock-readiness report, an aggregate HTML dashboard, and an editable Power BI project. It uses CDASH and SDTM ideas as design references; it is not a CDISC compliant submission or a validated EDC system.
 
 ## At a glance
 
@@ -16,7 +16,7 @@ The complete project package covers a simulation design record, analysis specifi
 | Discrepancy queries | 30 | Includes 12 downstream due-date issues |
 | Scripted query resolutions | 30 / 30 | Checked against generator truth, without source review |
 
-The [validation report](docs/validation_report.md), [case study](reports/portfolio_case_study.md), and [aggregate dashboard](reports/operational_dashboard.html) show the methods and outputs. The dashboard is a standalone HTML file to download or open locally; GitHub's code preview does not execute it.
+The [validation report](docs/validation_report.md), [case study](reports/portfolio_case_study.md), [aggregate HTML dashboard](reports/operational_dashboard.html), and [Power BI project](powerbi/Synthetic_Surgical_Registry.pbip) show the methods and outputs. Download the HTML file to view it in a browser; GitHub's code preview does not execute it. The PBIP opens in Power BI Desktop when the complete `powerbi/` folder is downloaded; see the [Power BI handoff](docs/BI_handoff.md).
 
 ## Run
 
@@ -24,10 +24,11 @@ Python 3.10+; no third-party packages. From the project directory:
 
 ```bash
 python -m src.build
+python -m src.build_powerbi
 python -m unittest discover -s tests -v
 ```
 
-Generated data are written to `data/`; the clean database represents valid records, while the challenge database has deliberate errors. `data/injected_errors.csv` is the answer key. Validation checks are applied to both independently. The reconciled database and audit log demonstrate documented resolution against generated truth. Open `reports/operational_dashboard.html` locally for an aggregate view. `reports/bi_tables/` contains aggregate CSVs for optional Power BI work; see `docs/BI_handoff.md`. `reports/lock_readiness.json` records the synthetic exercise outcome.
+Generated data are written to `data/`; the clean database represents valid records, while the challenge database has deliberate errors. `data/injected_errors.csv` is the answer key. Validation checks are applied to both independently. The reconciled database and audit log demonstrate documented resolution against generated truth. Open `reports/operational_dashboard.html` locally for an aggregate view. `powerbi/` contains a two-page PBIP report with an embedded aggregate snapshot. Run `python -m src.build_powerbi` after regenerating data to update that snapshot; see `docs/BI_handoff.md`. `reports/lock_readiness.json` records the synthetic exercise outcome.
 
 ## Structure
 
@@ -36,6 +37,7 @@ Generated data are written to `data/`; the clean database represents valid recor
 - `src/`: generator, validator, controlled reconciliation, summary, dashboard, and build runner.
 - `data/`: generated synthetic SQLite files, error answer key, and seed manifest.
 - `reports/`: machine-readable validation, query, reconciliation, and aggregate HTML outputs.
+- `powerbi/`: editable Power BI project containing only aggregate data and an operations/quality report.
 
 No names, addresses, dates of birth, chart numbers, source medical records, or actual outcome instruments are included. IDs are local simulated identifiers. Start with [`docs/study_protocol.md`](docs/study_protocol.md), [`docs/analysis_plan.md`](docs/analysis_plan.md), and [`docs/validation_report.md`](docs/validation_report.md); then consult [`PROJECT_STATE.md`](PROJECT_STATE.md) before extending or presenting the project.
 
