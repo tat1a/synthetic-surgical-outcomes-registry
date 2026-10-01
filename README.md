@@ -2,7 +2,7 @@
 
 A portfolio demonstration of clinical data management for breast surgery, peripheral nerve reconstruction, and wound reconstruction. **Every record is generated; no real patient data or PHI is used.** Numbers and clinical patterns in this repository are simulation outputs, not medical evidence.
 
-The portfolio package covers a simulation protocol, analysis and data-management plans, CRF specification, relational schema, deterministic generation of 300 fictional participants, independent validation rules, a controlled error challenge, query log, scripted reconciliation with audit entries, a technical lock-readiness report, and an aggregate HTML dashboard. It uses CDASH and SDTM ideas as design references; it is not a CDISC compliant submission or a validated EDC system.
+The complete project package covers a simulation design record, analysis specification and data-management plan, CRF specification, relational schema, deterministic generation of 300 fictional participants, independent validation rules, a controlled error challenge, query log, scripted reconciliation with audit entries, a technical lock-readiness report, and an aggregate HTML dashboard. It uses CDASH and SDTM ideas as design references; it is not a CDISC compliant submission or a validated EDC system.
 
 ## Run
 
