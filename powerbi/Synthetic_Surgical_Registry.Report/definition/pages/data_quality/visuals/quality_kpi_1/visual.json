@@ -1,0 +1,59 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "quality_kpi_1",
+  "position": {
+    "x": 345,
+    "y": 138,
+    "z": 11,
+    "height": 112,
+    "width": 280,
+    "tabOrder": 11
+  },
+  "visual": {
+    "visualType": "cardVisual",
+    "query": {
+      "queryState": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "cohort_counts"
+                    }
+                  },
+                  "Property": "Serious Event Flags"
+                }
+              },
+              "queryRef": "cohort_counts.Serious Event Flags",
+              "nativeQueryRef": "Serious Event Flags"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Serious event flags'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}
