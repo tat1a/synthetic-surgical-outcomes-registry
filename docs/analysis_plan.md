@@ -1,6 +1,6 @@
-# Prespecified operational analysis plan — version 1.0
+# Operational analysis specification — version 1.0
 
-This plan applies solely to the generated dataset and is executable through `python -m src.build`. All percentages describe simulated capture or rule performance; none estimates clinical outcomes.
+This specification records the metrics implemented for the generated dataset and is executable through `python -m src.build`. It was documented after the simulation was built; it is not a prospective registration. All percentages describe simulated capture or rule performance; none estimates clinical outcomes.
 
 | Measure | Numerator | Denominator / definition | Source |
 | --- | --- | --- | --- |

@@ -1,6 +1,6 @@
-# Public portfolio release review — local preparation only
+# Public portfolio release review
 
-No repository has been published or modified by this packet. Check these items before a public release.
+This review applies to the complete local package. Check the remote source, data examples, reports and CI before presenting any public GitHub repository as the finished project. A local pass alone is insufficient evidence of a complete remote release.
 
 | Review item | Current result | Basis / action |
 | --- | --- | --- |
@@ -11,7 +11,7 @@ No repository has been published or modified by this packet. Check these items b
 | Determinism | Tested at row level | Same seed produces same generated rows in automated test. |
 | Controlled challenge | 18 root errors, all identified | 30 related rule hits include cascading due-date issues. |
 | Query history | Scripted, non-EDC | Fixed timestamp and generated truth source are disclosed. |
-| Tests | Eight pass locally | Rebuild and test from project root; CI run pending publication. |
+| Tests | Eight pass locally | Rebuild and test from project root; observe remote CI separately. |
 | Documentation | Present | Protocol, analysis and data-management plans, CRF, field dictionary, rules, validation report, reviewer packet and handoff. |
 | License and repository owner | **Decided** | Owner requested public GitHub under their account with no license file. |
 
