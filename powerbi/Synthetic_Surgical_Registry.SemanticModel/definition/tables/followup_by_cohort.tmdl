@@ -1,0 +1,47 @@
+table followup_by_cohort
+	lineageTag: cb0eefb2-6af6-514e-b614-b231aa70a144
+
+	column cohort
+		dataType: text
+		lineageTag: c5b640a2-e81d-5e79-a51b-29314f1ddb73
+		sourceColumn: cohort
+
+	column day_target
+		dataType: int64
+		lineageTag: c5a9f58e-e472-55ab-90fa-73b7e62d4d85
+		sourceColumn: day_target
+		formatString: #,0
+		summarizeBy: none
+
+	column planned
+		dataType: int64
+		lineageTag: 348ec55c-ad9a-5def-90f8-21963c586fae
+		sourceColumn: planned
+		formatString: #,0
+		summarizeBy: none
+
+	column completed
+		dataType: int64
+		lineageTag: 08459687-592b-5290-9d55-fe16113cb1f4
+		sourceColumn: completed
+		formatString: #,0
+		summarizeBy: none
+
+	column missed
+		dataType: int64
+		lineageTag: 6a6c2a4b-80ec-5eff-9547-9861a7004cc3
+		sourceColumn: missed
+		formatString: #,0
+		summarizeBy: none
+
+	partition followup_by_cohort = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(Binary.FromText("Y29ob3J0LGRheV90YXJnZXQscGxhbm5lZCxjb21wbGV0ZWQsbWlzc2VkCmJyZWFzdCwzMCwxMDAsODMsMTcKYnJlYXN0LDkwLDEwMCw4OCwxMgpicmVhc3QsMTgwLDEwMCw5MCwxMApicmVhc3QsMzY1LDEwMCw4MCwyMApuZXJ2ZSwzMCwxMDAsODQsMTYKbmVydmUsOTAsMTAwLDkwLDEwCm5lcnZlLDE4MCwxMDAsOTQsNgpuZXJ2ZSwzNjUsMTAwLDcxLDI5CndvdW5kLDMwLDEwMCw5Miw4CndvdW5kLDkwLDEwMCw4NSwxNQp3b3VuZCwxODAsMTAwLDgzLDE3CndvdW5kLDM2NSwxMDAsNzIsMjgK", BinaryEncoding.Base64), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers", {{"cohort", type text}, {"day_target", Int64.Type}, {"planned", Int64.Type}, {"completed", Int64.Type}, {"missed", Int64.Type}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
