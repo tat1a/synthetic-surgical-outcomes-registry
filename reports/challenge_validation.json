@@ -1,0 +1,229 @@
+{
+  "synthetic_only": true,
+  "participants": 300,
+  "procedures": 300,
+  "followups": 1200,
+  "adverse_events": 52,
+  "critical_issues": 30,
+  "issues_by_rule": {
+    "CHRONOLOGY": 3,
+    "COHORT_MISMATCH": 3,
+    "FOLLOWUP_DUE": 15,
+    "FOLLOWUP_STATUS": 3,
+    "MODULE_MISSING": 3,
+    "SAE_NOTIFICATION": 3
+  },
+  "lock_ready_technical_simulation": false,
+  "issues": [
+    {
+      "rule_id": "CHRONOLOGY",
+      "table": "procedures",
+      "record_key": "PROC-0001",
+      "severity": "critical",
+      "description": "Procedure precedes enrollment"
+    },
+    {
+      "rule_id": "CHRONOLOGY",
+      "table": "procedures",
+      "record_key": "PROC-0002",
+      "severity": "critical",
+      "description": "Procedure precedes enrollment"
+    },
+    {
+      "rule_id": "CHRONOLOGY",
+      "table": "procedures",
+      "record_key": "PROC-0003",
+      "severity": "critical",
+      "description": "Procedure precedes enrollment"
+    },
+    {
+      "rule_id": "COHORT_MISMATCH",
+      "table": "procedures",
+      "record_key": "PROC-0013",
+      "severity": "critical",
+      "description": "Procedure cohort differs from participant"
+    },
+    {
+      "rule_id": "COHORT_MISMATCH",
+      "table": "procedures",
+      "record_key": "PROC-0014",
+      "severity": "critical",
+      "description": "Procedure cohort differs from participant"
+    },
+    {
+      "rule_id": "COHORT_MISMATCH",
+      "table": "procedures",
+      "record_key": "PROC-0015",
+      "severity": "critical",
+      "description": "Procedure cohort differs from participant"
+    },
+    {
+      "rule_id": "FOLLOWUP_DUE",
+      "table": "followups",
+      "record_key": "FU-0001-180",
+      "severity": "critical",
+      "description": "Due date does not equal procedure date plus target days"
+    },
+    {
+      "rule_id": "FOLLOWUP_DUE",
+      "table": "followups",
+      "record_key": "FU-0001-30",
+      "severity": "critical",
+      "description": "Due date does not equal procedure date plus target days"
+    },
+    {
+      "rule_id": "FOLLOWUP_DUE",
+      "table": "followups",
+      "record_key": "FU-0001-365",
+      "severity": "critical",
+      "description": "Due date does not equal procedure date plus target days"
+    },
+    {
+      "rule_id": "FOLLOWUP_DUE",
+      "table": "followups",
+      "record_key": "FU-0001-90",
+      "severity": "critical",
+      "description": "Due date does not equal procedure date plus target days"
+    },
+    {
+      "rule_id": "FOLLOWUP_DUE",
+      "table": "followups",
+      "record_key": "FU-0002-180",
+      "severity": "critical",
+      "description": "Due date does not equal procedure date plus target days"
+    },
+    {
+      "rule_id": "FOLLOWUP_DUE",
+      "table": "followups",
+      "record_key": "FU-0002-30",
+      "severity": "critical",
+      "description": "Due date does not equal procedure date plus target days"
+    },
+    {
+      "rule_id": "FOLLOWUP_DUE",
+      "table": "followups",
+      "record_key": "FU-0002-365",
+      "severity": "critical",
+      "description": "Due date does not equal procedure date plus target days"
+    },
+    {
+      "rule_id": "FOLLOWUP_DUE",
+      "table": "followups",
+      "record_key": "FU-0002-90",
+      "severity": "critical",
+      "description": "Due date does not equal procedure date plus target days"
+    },
+    {
+      "rule_id": "FOLLOWUP_DUE",
+      "table": "followups",
+      "record_key": "FU-0003-180",
+      "severity": "critical",
+      "description": "Due date does not equal procedure date plus target days"
+    },
+    {
+      "rule_id": "FOLLOWUP_DUE",
+      "table": "followups",
+      "record_key": "FU-0003-30",
+      "severity": "critical",
+      "description": "Due date does not equal procedure date plus target days"
+    },
+    {
+      "rule_id": "FOLLOWUP_DUE",
+      "table": "followups",
+      "record_key": "FU-0003-365",
+      "severity": "critical",
+      "description": "Due date does not equal procedure date plus target days"
+    },
+    {
+      "rule_id": "FOLLOWUP_DUE",
+      "table": "followups",
+      "record_key": "FU-0003-90",
+      "severity": "critical",
+      "description": "Due date does not equal procedure date plus target days"
+    },
+    {
+      "rule_id": "FOLLOWUP_DUE",
+      "table": "followups",
+      "record_key": "FU-0007-180",
+      "severity": "critical",
+      "description": "Due date does not equal procedure date plus target days"
+    },
+    {
+      "rule_id": "FOLLOWUP_DUE",
+      "table": "followups",
+      "record_key": "FU-0008-180",
+      "severity": "critical",
+      "description": "Due date does not equal procedure date plus target days"
+    },
+    {
+      "rule_id": "FOLLOWUP_DUE",
+      "table": "followups",
+      "record_key": "FU-0009-180",
+      "severity": "critical",
+      "description": "Due date does not equal procedure date plus target days"
+    },
+    {
+      "rule_id": "FOLLOWUP_STATUS",
+      "table": "followups",
+      "record_key": "FU-0004-90",
+      "severity": "critical",
+      "description": "Completed visit lacks visit date or score"
+    },
+    {
+      "rule_id": "FOLLOWUP_STATUS",
+      "table": "followups",
+      "record_key": "FU-0005-90",
+      "severity": "critical",
+      "description": "Completed visit lacks visit date or score"
+    },
+    {
+      "rule_id": "FOLLOWUP_STATUS",
+      "table": "followups",
+      "record_key": "FU-0006-90",
+      "severity": "critical",
+      "description": "Completed visit lacks visit date or score"
+    },
+    {
+      "rule_id": "MODULE_MISSING",
+      "table": "breast_module",
+      "record_key": "PROC-0010",
+      "severity": "critical",
+      "description": "Required cohort module absent"
+    },
+    {
+      "rule_id": "MODULE_MISSING",
+      "table": "nerve_module",
+      "record_key": "PROC-0011",
+      "severity": "critical",
+      "description": "Required cohort module absent"
+    },
+    {
+      "rule_id": "MODULE_MISSING",
+      "table": "wound_module",
+      "record_key": "PROC-0012",
+      "severity": "critical",
+      "description": "Required cohort module absent"
+    },
+    {
+      "rule_id": "SAE_NOTIFICATION",
+      "table": "adverse_events",
+      "record_key": "AE-0038",
+      "severity": "critical",
+      "description": "Serious AE has no notification date"
+    },
+    {
+      "rule_id": "SAE_NOTIFICATION",
+      "table": "adverse_events",
+      "record_key": "AE-0039",
+      "severity": "critical",
+      "description": "Serious AE has no notification date"
+    },
+    {
+      "rule_id": "SAE_NOTIFICATION",
+      "table": "adverse_events",
+      "record_key": "AE-0042",
+      "severity": "critical",
+      "description": "Serious AE has no notification date"
+    }
+  ]
+}

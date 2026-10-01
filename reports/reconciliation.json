@@ -1,0 +1,10 @@
+{
+  "synthetic_only": true,
+  "root_errors_corrected": 18,
+  "fields_or_rows_changed": 18,
+  "queries_resolved": 30,
+  "audit_entries": 48,
+  "remaining_issues": 0,
+  "lock_ready_technical_simulation": true,
+  "source_review": "Synthetic truth-reference exercise; no actual source-data verification."
+}

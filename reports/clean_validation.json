@@ -1,0 +1,11 @@
+{
+  "synthetic_only": true,
+  "participants": 300,
+  "procedures": 300,
+  "followups": 1200,
+  "adverse_events": 52,
+  "critical_issues": 0,
+  "issues_by_rule": {},
+  "lock_ready_technical_simulation": true,
+  "issues": []
+}

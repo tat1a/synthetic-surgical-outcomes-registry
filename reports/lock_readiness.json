@@ -1,0 +1,33 @@
+{
+  "synthetic_only": true,
+  "seed": 20261001,
+  "cohorts": {
+    "breast": 100,
+    "nerve": 100,
+    "wound": 100
+  },
+  "followup_completion": {
+    "completed": 1012,
+    "planned": 1200,
+    "percentage": 84.3
+  },
+  "adverse_events": {
+    "all": 52,
+    "serious": 5
+  },
+  "clean_lock_ready_technical_simulation": true,
+  "challenge_lock_ready_technical_simulation": false,
+  "reconciled_lock_ready_technical_simulation": true,
+  "controlled_challenge": {
+    "injected_cases": 18,
+    "detected_cases": 18,
+    "detection_percentage": 100.0,
+    "total_queries_including_cascades": 30
+  },
+  "reconciliation": {
+    "queries_resolved": 30,
+    "audit_entries": 48,
+    "remaining_issues": 0
+  },
+  "interpretation": "Operational simulation only; not clinical outcomes or a real database lock."
+}
