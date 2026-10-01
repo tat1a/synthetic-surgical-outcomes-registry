@@ -1,0 +1,59 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "kpi_2",
+  "position": {
+    "x": 650,
+    "y": 130,
+    "z": 12,
+    "height": 120,
+    "width": 280,
+    "tabOrder": 12
+  },
+  "visual": {
+    "visualType": "cardVisual",
+    "query": {
+      "queryState": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "cohort_counts"
+                    }
+                  },
+                  "Property": "Planned Visits"
+                }
+              },
+              "queryRef": "cohort_counts.Planned Visits",
+              "nativeQueryRef": "Planned Visits"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Scheduled visits'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}
