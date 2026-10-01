@@ -1,0 +1,13 @@
+cohort,day_target,planned,completed,missed
+breast,30,100,83,17
+breast,90,100,88,12
+breast,180,100,90,10
+breast,365,100,80,20
+nerve,30,100,84,16
+nerve,90,100,90,10
+nerve,180,100,94,6
+nerve,365,100,71,29
+wound,30,100,92,8
+wound,90,100,85,15
+wound,180,100,83,17
+wound,365,100,72,28
