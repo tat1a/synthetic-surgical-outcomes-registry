@@ -17,6 +17,15 @@ STEM = "Synthetic_Surgical_Registry"
 
 
 class PowerBIProjectTests(unittest.TestCase):
+    def test_tmdl_column_data_types_are_supported(self):
+        model = PACKAGE / f"{STEM}.SemanticModel" / "definition" / "tables"
+        allowed = {"string", "int64", "double", "decimal", "boolean", "dateTime", "binary", "variant"}
+        for name, fields in SCHEMAS.items():
+            self.assertTrue(set(fields.values()) <= allowed, name)
+            definition = (model / f"{name}.tmdl").read_text(encoding="utf-8")
+            for col, kind in fields.items():
+                self.assertRegex(definition, rf"(?m)^\tcolumn {re.escape(col)}\n\t\tdataType: {kind}$")
+
     def test_embedded_aggregates_match_exports_and_expected_totals(self):
         model = PACKAGE / f"{STEM}.SemanticModel" / "definition" / "tables"
         parsed = {}
