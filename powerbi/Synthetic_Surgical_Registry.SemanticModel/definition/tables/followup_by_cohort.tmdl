@@ -2,7 +2,7 @@ table followup_by_cohort
 	lineageTag: cb0eefb2-6af6-514e-b614-b231aa70a144
 
 	column cohort
-		dataType: text
+		dataType: string
 		lineageTag: c5b640a2-e81d-5e79-a51b-29314f1ddb73
 		sourceColumn: cohort
 

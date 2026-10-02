@@ -2,12 +2,12 @@ table field_completeness
 	lineageTag: 347e5aeb-249a-5ee0-ac4c-b04ebc11c573
 
 	column table_name
-		dataType: text
+		dataType: string
 		lineageTag: eded1902-0a8b-521d-a86e-de399b1a6105
 		sourceColumn: table_name
 
 	column field_name
-		dataType: text
+		dataType: string
 		lineageTag: 89ed55e5-62fa-5e47-b780-f2835613dd3a
 		sourceColumn: field_name
 

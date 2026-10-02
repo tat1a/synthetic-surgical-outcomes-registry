@@ -2,7 +2,7 @@ table ae_by_cohort
 	lineageTag: 66257b65-29db-5d0e-80f8-ee6eb2acddf7
 
 	column cohort
-		dataType: text
+		dataType: string
 		lineageTag: baf5535f-8d9d-54ae-8bb7-91ef3716b25f
 		sourceColumn: cohort
 

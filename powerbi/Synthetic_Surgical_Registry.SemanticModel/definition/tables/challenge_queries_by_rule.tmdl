@@ -2,7 +2,7 @@ table challenge_queries_by_rule
 	lineageTag: d7dbf38d-bb56-517e-920f-e3382cde6366
 
 	column rule_id
-		dataType: text
+		dataType: string
 		lineageTag: 65455ea5-ed9f-521f-baa6-a200f75994dd
 		sourceColumn: rule_id
 

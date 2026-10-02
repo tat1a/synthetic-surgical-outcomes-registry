@@ -2,7 +2,7 @@ table cohort_counts
 	lineageTag: ad067a55-cb75-5a40-8352-2d1e464dab3b
 
 	column cohort
-		dataType: text
+		dataType: string
 		lineageTag: 9e7e1e6d-9eb2-5c3d-a19d-448f0258dbd3
 		sourceColumn: cohort
 
