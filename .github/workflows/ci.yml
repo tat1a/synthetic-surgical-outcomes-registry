@@ -20,7 +20,9 @@ jobs:
           python-version: ${{ matrix.python-version }}
       - name: Rebuild generated examples
         run: python -m src.build
+      - name: Rebuild Power BI project
+        run: python -m src.build_powerbi
       - name: Verify committed text outputs are reproducible
-        run: git diff --exit-code -- data/generation_manifest.json data/injected_errors.csv reports/
+        run: git diff --exit-code -- data/generation_manifest.json data/injected_errors.csv reports/ powerbi/
       - name: Run registry tests
         run: python -m unittest discover -s tests -v
