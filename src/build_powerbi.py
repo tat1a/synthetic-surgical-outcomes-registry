@@ -20,11 +20,11 @@ MODEL = OUT / f"{NAME}.SemanticModel"
 REPORT = OUT / f"{NAME}.Report"
 SAMPLE_THEME = None  # The PBIR uses the default Power BI theme.
 SCHEMAS = {
-    "cohort_counts": {"cohort": "text", "participant_count": "int64"},
-    "followup_by_cohort": {"cohort": "text", "day_target": "int64", "planned": "int64", "completed": "int64", "missed": "int64"},
-    "ae_by_cohort": {"cohort": "text", "event_count": "int64", "serious_count": "int64", "unnotified_serious_count": "int64"},
-    "challenge_queries_by_rule": {"rule_id": "text", "query_count": "int64"},
-    "field_completeness": {"table_name": "text", "field_name": "text", "nonmissing": "int64", "rows": "int64", "missing": "int64"},
+    "cohort_counts": {"cohort": "string", "participant_count": "int64"},
+    "followup_by_cohort": {"cohort": "string", "day_target": "int64", "planned": "int64", "completed": "int64", "missed": "int64"},
+    "ae_by_cohort": {"cohort": "string", "event_count": "int64", "serious_count": "int64", "unnotified_serious_count": "int64"},
+    "challenge_queries_by_rule": {"rule_id": "string", "query_count": "int64"},
+    "field_completeness": {"table_name": "string", "field_name": "string", "nonmissing": "int64", "rows": "int64", "missing": "int64"},
 }
 MEASURES = {
     "Participants": ("SUM(cohort_counts[participant_count])", "#,0"),
